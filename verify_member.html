@@ -3,20 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <title>Verify Member</title>
-        <link rel="stylesheet" href="style.css">
-
-    
-    <title>Verify Member</title>
+    <title>Verifikasi Member</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h2>Verify Member</h2>
-        <input type="number" id="memberId" placeholder="Enter Member ID">
-        <button onclick="verifyMember()">Verify</button>
-        <div class="result" id="result"></div>
-    </div>
+    <h1>Verifikasi Member</h1>
+    <form id="verifyForm">
+        <label for="memberId">Masukkan ID Member:</label>
+        <input type="text" id="memberId" placeholder="ID Member" required>
+        <button type="submit">Verifikasi</button>
+    </form>
+
+    <!-- Tombol Back -->
+    <button id="backButton">Back</button>
+
+    <script>
+        // Fungsi untuk tombol Back
+        document.getElementById("backButton").onclick = function () {
+            window.location.href = "index.html"; // Ganti dengan halaman tujuan (misalnya index.html)
+        };
+
 
     <script>
         function verifyMember() {
