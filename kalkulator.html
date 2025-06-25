@@ -27,17 +27,34 @@
     }
     .checkbox, .radio-group { margin-top: 10px; }
     .radio-group label { font-weight: normal; display: block; margin-left: 20px; }
-    button {
-      margin-top: 20px; width: 100%; padding: 10px;
-      background-color: #fffdd0; color: black;
-      border: none; border-radius: 6px; font-size: 16px;
+   button {
+      margin-top: 15px;
+      width: 100%;
+      padding: 10px;
+      background-color: #fffdd0;
+      color: rgb(0, 0, 0);
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
       cursor: pointer;
+      transition: background-color 0.3s;
     }
     button:hover { background-color: #ffd700; }
     .result {
       margin-top: 20px; font-size: 18px; font-weight: bold;
       text-align: center; white-space: pre-line;
     }
+      .dark-mode {
+      background-color: #1f1f1f;
+      color: #f1f1f1;
+    }
+     .dark-mode input,
+    .dark-mode button {
+      background-color: #333;
+      color: white;
+      border: 1px solid #666;
+    }
+    
     #map { height: 300px; margin-bottom: 20px; border-radius: 12px; }
   </style>
 </head>
@@ -85,6 +102,7 @@
 
   <button onclick="hitungTarif()">Hitung Tarif</button>
   <button onclick="kirimWhatsApp()">Kirim ke WhatsApp</button>
+  <button onclick="toggleMode()">🌓 Ubah Tema</button>
 
   <div class="result" id="hasil"></div>
 
@@ -218,6 +236,10 @@
       const link = `https://wa.me/62${nomor}?text=${encodeURIComponent(hasil)}`;
       window.open(link, "_blank");
     }
+       function toggleMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+    
   </script>
 </body>
 </html>
